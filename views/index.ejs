@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <%- include('./common/header')%>
+
+    
+
+    <section class="sec-1">
+        <div class="sec-1-inner">
+            <div class="img">
+                <img src="/images/1.jpg" alt="image1">
+            </div>
+
+            <div class="links">
+
+                <div class="create">
+                    <div class="post">
+                        <img src="/images/2.svg" alt="create">
+
+                    </div>
+                    <a href="/post">POST BLOG</a>
+                </div>
+
+                <div class="view">
+                    <div class="v">
+                        <img src="/images/3.png" alt="view">
+
+                    </div>
+                    <a href="/blog">VIEW BLOG</a>
+                  
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <%- include('./common/footer')%>   
+</body>
+
+<script src="/script/script.js"></script>
+
+</html>

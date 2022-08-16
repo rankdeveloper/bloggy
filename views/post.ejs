@@ -1,0 +1,150 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Post blog</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            margin-top:2rem;
+            color: #7fffd4;
+            border-bottom: 2px solid #7fffd4;
+            text-align: center;
+            /* padding: 1rem; */
+            max-width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+        }
+
+      
+        .form-part {
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            max-height: 90%;
+            justify-content: center;
+            height: 100vh;  
+        }
+
+        .form-part-inner {
+            box-shadow: 10px 10px 32px -4px rgb(0 0 0/56%);
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            max-width: 40%;
+        }
+
+        form {
+            padding: 1rem;
+            color: #7fffd4
+        }
+
+        form label {
+            text-indent: 1.5;
+            font-size: 1.5rem;
+            color:#0091EA
+        }
+
+        form input {
+            color: #475569;
+            width: 100%;
+            padding: 1rem;
+            height: 3rem;
+            margin-bottom: 1rem;
+            border-left: 0;
+            border-right: 0;
+            border-top: none;
+            border-color: #0091EA;
+            outline:none;
+        }
+
+      
+
+        form .content{
+            margin-top: 1rem;
+        }
+        form textarea {
+            color: #475569;
+            margin-top: 1rem;
+            width: 100%;
+            resize: none;
+            height: 10rem;
+            outline: none;
+            padding: 1rem;
+            border:2px solid #0091EA;
+        }
+
+        form .post input {
+            text-align: center;
+            padding: 0;
+            height: 3rem;
+            text-transform: capitalize;
+            font-weight: bold;
+            margin-top: 2rem;
+            background-color: #0091EA;
+            transition: .3s ease-out;
+            border:none;
+            color:#7fffd4;
+        }
+
+        form .post input:hover{
+           color: #0091EA;
+            background-color:#7fffd4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <%- include('./common/header')%>
+
+    <div class="form-part">
+        <div class="form-part-inner">
+
+            <div class="form-title">
+                <h2>Post your own blog</h2>
+            </div>
+            <form action="/post" method="post">
+                <label for="blog-title">Blog Title</label>
+                <input type="text" name="title" required>
+
+                <label for="Your name">Your name</label>
+                <input type="text" name="name" required>
+
+                <label for="ID">Your ID</label>
+                <input type="text" name="id" required>
+
+                <label class="content" for="content">Content</label>
+                <textarea placeholder="Content" name="content" required></textarea>
+
+
+                <div class="post">
+                    <input type="submit" value="POST">
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+    <%- include('./common/footer')%> 
+    <script src="/script/script.js"></script>
+</body>
+
+</html>

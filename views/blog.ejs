@@ -1,0 +1,65 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <%- include('./common/header')%>
+    
+        <div class="center">
+            <div class="total-blog">
+                <h3>Total no. of blogs present <%=total_blog%>
+                </h3>
+            </div>
+          
+
+
+            <div class="blogs">
+
+                <% for(let i=0; i<result.length; i++){%>
+
+
+                    <div class="blog-inner">
+                        <div class="title">
+                            <h2>
+                                <%=result[i].title%>
+                            </h2>
+                            <p>posted by <%=result[i].name%> , ID : <%=result[i].id%>
+                            </p>
+                        </div>
+
+
+                        <div class="content">
+                            <p>
+                                <%=result[i].content%>
+                            </p>
+                        </div>
+                    </div><br>
+
+
+                    <%}%>
+
+            </div>
+
+
+            <!-- <div class="prev-next">
+            <button class="prev">Previous</button>
+            <button class="next">Next</button>
+
+        </div> -->
+
+        </div>
+
+        <%- include('./common/footer')%>
+
+        <script src="/script/script.js"></script>
+</body>
+
+</html>
