@@ -87,3 +87,10 @@ footer .footer-inner a:hover{
     font-weight: bold;
     transition: .3s ease-out;
 }
+
+@media  screen and (max-width:400px){
+    .sec-1-inner{
+        flex-direction: column;
+    }
+    
+}

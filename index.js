@@ -29,10 +29,11 @@ app.get('/' , (req , res) => {
 })
 
 app.get('/blog' , (req , res) => {
-    MongoClient.connect(process.env.CONNECTIONSTRING , {useNewUrlParser:true} , async (err,client) => {
-        const db=client.db("blogData")
-        const result=await db.collection('blog').find({}).toArray()
-        const total_blog=await db.collection('blog').count()
+    MongoClient.connect(process.env.CONNECTIONSTRING , {useNewUrlParser:true} ,  async (err,client) => {
+        // const db1=client.db("blogData")
+        const db1=client.db('blogData')
+        const result=await db1.collection('blog').find({}).toArray()
+        const total_blog= await db1.collection('blog').count()
         res.render('blog' , {result , total_blog})
     })
   
@@ -65,7 +66,7 @@ app.post('/post' , (req ,res) => {
             console.log("a document added" , result)
         })
         // res.render('blog' , {result})
-        res.send("Document inserted successfuly")
+        res.render("posted")
     })
 
 })
